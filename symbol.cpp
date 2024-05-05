@@ -59,7 +59,6 @@ unsigned __int64 LoadSymbolTable(HANDLE Process, char* ModuleName, unsigned __in
 	char SymbolFile[MAX_PATH] = "";
 	char DbgFile[MAX_PATH] = "";
 	if (!SymGetSymbolFile(Process, NULL, SymbolFilePath, sfPdb, SymbolFile, MAX_PATH, DbgFile, MAX_PATH)) {
-		// GetLastError() == 2 请在.exe文件路径下添加 dbghelp.dll symsrv.dll
 		return 0;
 	}
 
